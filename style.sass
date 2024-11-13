@@ -1,0 +1,82 @@
+@use 'general'
+  
+.container
+  min-block-size: 100vh
+  padding: 40px 20px
+  display: flex
+  justify-content: center
+  align-items: center
+  gap: 20px
+
+.nft-card
+  $bg-clr: hsl(216, 50%, 16%)
+  $text-clr: hsl(215, 51%, 70%)
+  $price-clr: hsl(178, 100%, 50%)
+  $line-bg-clr: hsl(215, 32%, 27%)
+  $outer-space: clamp(16px, 16px + .3vw, 20px)
+
+  max-inline-size: min(90vw, 20rem)
+  display: flow-root
+  background: $bg-clr
+  padding: 20px
+  border-radius: 20px
+  color: $text-clr
+  font-weight: 300
+  box-shadow: 16px 16px 6px rgba(0,0,0,.1), -16px 16px 6px rgba(0,0,0,.1), 32px 32px 6px rgba(0,0,0,.05), -32px 32px 6px rgba(0,0,0,.05), 24px -16px 6px rgba(0,0,0,.05), -24px -16px 6px rgba(0,0,0,.05)
+
+  img // every image element in NFT card
+    display: inline-block
+    vertical-align: middle
+
+  &__image
+    display: block
+    border-radius: 10px
+
+  &__name
+    color: #fff
+    font-size: 1.4rem
+    font-weight: 600
+    margin-block-start: calc($outer-space + 5px)
+    line-height: 1.5
+
+  &__desc
+    margin-block-start: $outer-space
+
+  &__stat
+    display: flex
+    justify-content: space-between
+    margin-block-start: $outer-space
+    img
+      margin-inline-end: 10px
+      margin-block-start: -5px
+
+  &__price
+    color: $price-clr
+    font-weight: 600
+
+
+  &__age
+    font-weight: 400
+
+  &__line
+    height: 2px
+    background: $line-bg-clr
+    margin-block-start: calc($outer-space + 5px)
+
+  &__author
+    margin-block-start: $outer-space
+    img
+      max-block-size: 2rem
+      vertical-align: middle
+      border: 2px solid #fff
+      border-radius: 50%
+      margin-inline-end: 16px
+
+  &__author-name
+    color: #fff
+
+
+@media (min-width: 48em)
+  .nft-card
+    $outer-space: 20px
+    padding: 25px
